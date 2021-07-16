@@ -1,0 +1,47 @@
+version: '3'
+
+networks:
+  docker-server:
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/var/www/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - docker-server
+
+  mysql:
+    image: mysql:5.7.22
+    container_name: mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Techn9ne!
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - docker-server
+
+  php:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    container_name: php
+    volumes: 
+      - ./www:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - docker-server
