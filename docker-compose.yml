@@ -45,3 +45,13 @@ services:
       - "9000:9000"
     networks:
       - docker-server
+
+  cron:
+    build:
+      context: .
+      dockerfile: cron/Dockerfile
+    container_name: cron
+    volumes:
+      - ./www:/var/www/html
+    networks:
+      - docker-server
