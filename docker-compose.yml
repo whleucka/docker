@@ -41,6 +41,7 @@ services:
     container_name: php
     volumes: 
       - ./www:/var/www/html
+      - /home/whleucka/Music:/music
     ports:
       - "9000:9000"
     networks:
