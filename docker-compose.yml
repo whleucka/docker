@@ -54,5 +54,6 @@ services:
     container_name: cron
     volumes:
       - ./www:/var/www/html
+      - /home/whleucka/Music:/music
     networks:
       - docker-server

@@ -22,7 +22,7 @@
 # 
 # m h  dom mon dow   command
 ## soprano-ng tasks
-*/7 * * * * /usr/local/bin/php /var/www/html/soprano-ng/app/Console/Kernel.php scanMusicDirectory
+*/2 * * * * /usr/local/bin/php /var/www/html/soprano-ng/app/Console/Kernel.php scanMusicDirectory
 */15 * * * * /usr/local/bin/php /var/www/html/soprano-ng/app/Console/Kernel.php scanCoverArt
 
 # Extra space EOF
