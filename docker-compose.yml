@@ -27,6 +27,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
+      - ./www:/var/www/html
       - ./mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: Techn9ne!
