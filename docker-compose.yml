@@ -30,7 +30,7 @@ services:
       - ./www:/var/www/html
       - ./mysql:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: Techn9ne!
+      MYSQL_ROOT_PASSWORD: libra
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
