@@ -21,9 +21,6 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-## soprano-ng tasks
-0 5 * * * /usr/local/bin/php /var/www/html/soprano-ng/app/Console/Kernel.php scanMusicDirectory
-0 6 * * * /usr/local/bin/php /var/www/html/soprano-ng/app/Console/Kernel.php scanCoverArt
 
 # Extra space EOF
 
