@@ -29,6 +29,7 @@ services:
     volumes:
       - ./www:/var/www/html
       - ./mysql:/var/lib/mysql
+    command: mysqld --sql_mode=""
     environment:
       MYSQL_ROOT_PASSWORD: libra
       SERVICE_TAGS: dev
@@ -50,14 +51,14 @@ services:
     networks:
       - docker-server
 
-  cron:
-    build:
-      context: .
-      dockerfile: cron/Dockerfile
-    container_name: cron
-    restart: unless-stopped
-    volumes:
-      - ./www:/var/www/html
-      - /home/whleucka/Music:/music
-    networks:
-      - docker-server
+        # cron:
+        #   build:
+        #     context: .
+        #     dockerfile: cron/Dockerfile
+        #   container_name: cron
+        #   restart: unless-stopped
+        #   volumes:
+        #     - ./www:/var/www/html
+        #     - /home/whleucka/Music:/music
+        #   networks:
+        #     - docker-server

@@ -1,4 +1,4 @@
-FROM  php:8.1.0alpha3-fpm-alpine
+FROM  php:8.1-fpm-alpine
 
 RUN apk add --no-cache ffmpeg bash zsh
 
